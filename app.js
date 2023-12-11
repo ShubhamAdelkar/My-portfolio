@@ -92,5 +92,5 @@ const sr = ScrollReveal({
 })
 
 sr.reveal(`.home__data`)
-sr.reveal(`.nav__social, .nav__logo`, { delay: 300 })
-sr.reveal(`.home__handle`, { delay: 350 })
+sr.reveal(`.nav__social, .nav__logo`, { delay: 200 })
+sr.reveal(`.home__handle`, { delay: 250 })
