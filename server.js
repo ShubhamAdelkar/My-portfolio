@@ -28,7 +28,7 @@ app.post('/', (req, res) => {
     const mailOptions = {
         from: `${formData.fullNameInput} <${formData.emailInput}>`,
         to: 'adelkarshubham47@gmail.com',
-        subject: 'New Contact Submission',
+        subject: 'Contact Submission',
         html: `
     <p><strong>Name:</strong> ${formData.fullNameInput}</p>
     <p><strong>Email:</strong> ${formData.emailInput}</p>
