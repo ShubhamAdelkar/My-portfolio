@@ -1,2 +1,3 @@
 [build]
-env = { PORT = "5000" }
+  command = "npm start"
+  functions = "functions"
