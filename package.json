@@ -8,7 +8,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "Shubham",
+  "author": "Shubham A",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
