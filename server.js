@@ -9,7 +9,13 @@ const PORT = process.env.PORT || 5000;
 app.use(express.static(__dirname));
 app.use(express.json());
 
-nodemailer.createTransport().emit.setMaxListeners(15);
+nodemailer.createTransport({
+    agent: false, // Disable the use of a global agent
+    tls: {
+        // Set the maximum number of listeners for the TLS sockets
+        rejectUnauthorized: false,
+    },
+}).emit.setMaxListeners(15); // or set it to a higher number if needed
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
