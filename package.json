@@ -4,6 +4,7 @@
   "description": "<h1>my portfolio</h1>",
   "main": "app.js",
   "scripts": {
+    "build": "npm run build",
     "dev": "nodemon server.js",
     "start": "node server.js"
   },
