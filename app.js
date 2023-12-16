@@ -1,6 +1,5 @@
 function scrollHeader() {
     const header = document.getElementById('header');
-    //>50vh height, add
     if (this.scrollY <= 50) header.classList.add('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
@@ -94,3 +93,40 @@ const sr = ScrollReveal({
 sr.reveal(`.home__data`)
 sr.reveal(`.nav__social, .nav__logo`, { delay: 200 })
 sr.reveal(`.home__handle`, { delay: 250 })
+
+// Contact Form
+
+const contactForm = document.querySelector('.contact__form');
+let fullNameInput = document.getElementById('name');
+let emailInput = document.getElementById('email');
+let messageInput = document.getElementById('message');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let formData = {
+        fullNameInput: fullNameInput.value,
+        emailInput: emailInput.value,
+        messageInput: messageInput.value
+    };
+
+    console.log(formData);
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', '/');
+    xhr.setRequestHeader('content-type', 'application/json');
+    xhr.onload = function () {
+        console.log(xhr.responseText);
+        if (xhr.responseText == 'success') {
+            alert('Message sent');
+            fullNameInput.value = '';
+            emailInput.value = '';
+            messageInput.value = '';
+        } else {
+            alert('Soemthing went wrong!');
+        }
+    }
+
+    xhr.send(JSON.stringify(formData));
+
+});

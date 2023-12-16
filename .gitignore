@@ -1,0 +1,25 @@
+# Ignore package manager files
+node_modules/
+package-lock.json
+
+# Ignore temporary files
+*.cache
+*.log
+*.tmp
+
+# Ignore editor config files
+.vscode/
+.idea/
+
+# Ignore compiled files (if using any)
+build/
+dist/
+
+# Ignore environment files
+.env
+
+# Ignore IDE specific files
+.DS_Store
+
+# Ignore generated documentation
+doc/
