@@ -6,4 +6,3 @@
 - boxiicons
 - scrollreveal
 
-# link in about
