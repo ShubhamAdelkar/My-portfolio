@@ -23,13 +23,9 @@ app.post('/', (req, res) => {
         }
     });
 
-    const replyToName = 'Shubham Adelkar';
-    const replyToAddress = `${replyToName} <https://shubham-adelkar.netlify.app/>`;
-
     const mailOptions = {
         from: `${formData.fullNameInput} <${formData.emailInput}>`,
         to: 'adelkarshubham47@gmail.com',
-        replyTo: replyToAddress,
         subject: 'New Contact Submission',
         html: `
     <p><strong>Name:</strong> ${formData.fullNameInput}</p>
