@@ -9,6 +9,8 @@ const PORT = process.env.PORT || 5000;
 app.use(express.static(__dirname));
 app.use(express.json());
 
+nodemailer.createTransport().emit.setMaxListeners(15);
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
