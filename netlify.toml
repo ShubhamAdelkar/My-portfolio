@@ -1,2 +1,2 @@
-[env]
-PORT = "5000"
+[build]
+env = { PORT = "5000" }
