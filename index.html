@@ -449,24 +449,29 @@
                 <div class="container__content">
                     <h3 class="contact__title">Write me your message</h3>
 
-                    <form action="" class="contact__form">
+                    <form action="/" method="post" class="contact__form">
                         <div class="contact__form-div">
-                            <label for="" class="contact__form-tag">Name</label>
-                            <input type="text" placeholder='Type your name' class="contact__form-input">
+                            <label for="name" class="contact__form-tag">Name</label>
+                            <input type="text" placeholder='Type your name' class="contact__form-input" id="name"
+                                name="name" autocomplete="name">
                         </div>
 
                         <div class="contact__form-div">
-                            <label for="" class="contact__form-tag">Mail</label>
-                            <input type="email" class="contact__form-input" placeholder="Type your email">
+                            <label for="email" class="contact__form-tag">Mail</label>
+                            <input type="email" class="contact__form-input" placeholder="Type your email" id="email"
+                                name="email" autocomplete="email">
                         </div>
 
                         <div class="contact__form-div contact__form-area">
-                            <label for="" class="contact__form-tag">Message</label>
-                            <textarea name="" id="" cols="30" rows="10" class="contact__form-input textarea"
-                                placeholder="Im building backend, sorry"></textarea>
+                            <label for="message" class="contact__form-tag">Message</label>
+                            <textarea name="" id="message" cols="30" rows="10" class="contact__form-input textarea"
+                                placeholder="Im building backend, sorry" name="message" autocomplete="off"></textarea>
                         </div>
 
-                        <button class="contact__form-button button send-message">Send Message </button>
+                        <button class="contact__form-button button send-message submit" type="submit"
+                            value="send-message">Send
+                            Message
+                        </button>
                     </form>
                 </div>
             </div>
