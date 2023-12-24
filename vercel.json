@@ -1,13 +1,9 @@
 {
   "version": 2,
-  "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
-  },
-  "builds": [
+  "routes": [
     {
-      "src": "app.js",
-      "use": "@vercel/node"
+      "src": "/(.*)",
+      "dest": "/public/$1"
     }
   ]
 }
