@@ -626,6 +626,18 @@ body.light-theme {
 
 
 /*=============== WORK ===============*/
+
+.link-container {
+  display: flex;
+  gap: .7rem;
+  padding-top: .4rem;
+}
+
+.not-allowed {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .work__container {
   padding-top: 1rem;
 }
