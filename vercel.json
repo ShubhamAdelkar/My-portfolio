@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
   "builds": [
     {
       "src": "app.js",
