@@ -110,6 +110,24 @@ contactForm.addEventListener('submit', (e) => {
     return; // Stop the function if any field is empty
   }
 
+  // Validation for Name (accept only strings)
+  if (!/^[a-zA-Z]+$/.test(fullNameInput.value)) {
+    alert("Please enter a valid name (only letters are allowed).");
+    return;
+  }
+
+  // Validation for Email (check for @ sign)
+  if (!/^.+@.+\..+$/.test(emailInput.value)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  // Validation for Message (minimum 5 characters)
+  if (messageInput.value.length < 5) {
+    alert("Please enter a message with a minimum of 5 characters.");
+    return;
+  }
+
   let formData = {
     fullNameInput: fullNameInput.value,
     emailInput: emailInput.value,
