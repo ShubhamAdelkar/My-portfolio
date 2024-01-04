@@ -102,31 +102,36 @@ let emailInput = document.getElementById('email');
 let messageInput = document.getElementById('message');
 
 contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    let formData = {
-        fullNameInput: fullNameInput.value,
-        emailInput: emailInput.value,
-        messageInput: messageInput.value
-    };
+  // Check if any field is empty
+  if (!fullNameInput.value || !emailInput.value || !messageInput.value) {
+    alert("Please fill in all fields before submitting.");
+    return; // Stop the function if any field is empty
+  }
 
-    console.log(formData);
+  let formData = {
+    fullNameInput: fullNameInput.value,
+    emailInput: emailInput.value,
+    messageInput: messageInput.value,
+  };
 
-    let xhr = new XMLHttpRequest();
-    xhr.open('POST', '/');
-    xhr.setRequestHeader('content-type', 'application/json');
-    xhr.onload = function () {
-        console.log(xhr.responseText);
-        if (xhr.responseText == 'success') {
-            alert('Message sent');
-            fullNameInput.value = '';
-            emailInput.value = '';
-            messageInput.value = '';
-        } else {
-            alert('Soemthing went wrong!');
-        }
+  console.log(formData);
+
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "/");
+  xhr.setRequestHeader("content-type", "application/json");
+  xhr.onload = function () {
+    console.log(xhr.responseText);
+    if (xhr.responseText == "success") {
+      alert("Message sent");
+      fullNameInput.value = "";
+      emailInput.value = "";
+      messageInput.value = "";
+    } else {
+      alert("Soemthing went wrong!");
     }
+  };
 
-    xhr.send(JSON.stringify(formData));
-
+  xhr.send(JSON.stringify(formData));
 });
