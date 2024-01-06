@@ -198,6 +198,7 @@ body.light-theme {
 .light-theme .button--ghost {
   color: #000;
   background: none;
+  font-weight: var(--font-medium);
   background-color: transparent;
 }
 
